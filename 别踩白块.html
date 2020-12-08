@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .score{
+            margin-left: 50px;
+            margin-top: 44px;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            margin-left: 50px;
+            margin-top: 50px;
+            border:1px solid blue;
+            /* 父相 */
+            position: relative;
+            /* 溢出隐藏 */
+            overflow: hidden;
+        }
+        .box .game {
+            /* 因为后期我们需要让游戏区下落运动起来,所以需要给游戏区设置绝对定位 */
+            /* 子绝 */
+            position: absolute;
+            top: -50px;
+            left: 0;
+        }
+        .box .game .row div{
+            width: 98px;
+            height: 98px;
+            border:1px solid gray;
+            float: left;
+        }
+        .box .game .row .black{
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. HTML,CSS完成可视区以及游戏区的布局 -->
+    <!-- 统计分数的文本框  disabled代表禁用属性,不能可以编辑-->
+    <input type="text" class="score" value="0" disabled="disabled">
+    
+    <!-- 外层大盒子  可视区 -->
+    <div class="box">
+        <!-- 内层盒子 游戏区域 也就是需要一直向下运动并且可以点击的区域  -->
+        <div class="game">
+            <div class="row">
+                <div class="black"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="row">
+                <div></div>
+                <div class="black"></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="row">
+                <div></div>
+                <div></div>
+                <div class="black"></div>
+                <div></div>
+            </div>
+            <div class="row">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="black"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dist/bundle.js"></script>
+</body>
+</html>
